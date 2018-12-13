@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/news/src/router"
+	"github.com/srgupta5328/weather/router"
 )
 
 func main() {
