@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 
@@ -10,6 +9,5 @@ import (
 
 func main() {
 	r := router.NewRouter()
-	fmt.Println("Weather Widget")
 	log.Fatal(http.ListenAndServe(":8300", r))
 }
