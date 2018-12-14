@@ -1,12 +1,16 @@
 package router
 
-import "net/http"
+import (
+	"net/http"
+
+	"github.com/srgupta5328/weather/api"
+)
 
 //Route Struct to hold Route information
 type Route struct {
 	Name        string
-	Pattern     string
 	Method      string
+	Pattern     string
 	HandlerFunc http.HandlerFunc
 }
 
@@ -20,13 +24,19 @@ func InitRoutes() Routes {
 			"Health",
 			"GET",
 			"/health",
-			HealthCheck,
+			api.HealthCheck,
 		},
 		Route{
 			"Callback",
 			"GET",
 			"/callback",
-			Callback,
+			api.Callback,
+		},
+		Route{
+			"Get Forecast",
+			"GET",
+			"/forecast",
+			api.GetForecastHandler,
 		},
 	}
 
