@@ -1,11 +1,9 @@
 package api
 
-var(
-forecastURL =  " https://api.darksky.net/forecast/[key]/[latitude],[longitude]" 
+var (
+	forecastURL = " https://api.darksky.net/forecast/[key]/[latitude],[longitude]"
 )
 
-
-func  getWeather(latitude float32, longitude float32) ([]byte, error){
-return nil, err
+func getForecast(latitude float32, longitude float32) ([]byte, error) {
+	return nil, err
 }
-
