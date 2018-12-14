@@ -1,9 +1,7 @@
-package router
+package api
 
 import (
 	"net/http"
-
-	"github.com/srgupta5328/weather/api"
 )
 
 //Route Struct to hold Route information
@@ -24,19 +22,19 @@ func InitRoutes() Routes {
 			"Health",
 			"GET",
 			"/health",
-			api.HealthCheck,
+			HealthCheck,
 		},
 		Route{
 			"Callback",
 			"GET",
 			"/callback",
-			api.Callback,
+			Callback,
 		},
 		Route{
 			"Get Forecast",
 			"GET",
 			"/forecast",
-			api.GetForecastHandler,
+			GetForecastHandler,
 		},
 	}
 
