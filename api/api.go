@@ -15,7 +15,7 @@ const (
 
 var (
 	lat  = "42.3601"
-	long = "-71.0589"
+	long = "71.0589"
 )
 
 //HealthCheck ... Health Check Endpoint
@@ -31,7 +31,8 @@ func Callback(w http.ResponseWriter, r *http.Request) {
 //GetForecastHandler Gets forecast data for hardcoded latitude and longitude
 func GetForecastHandler(w http.ResponseWriter, r *http.Request) {
 	darkSkyKey := os.Getenv("DARK_SKY_SECRET")
-	url := baseURLForecast + darkSkyKey + lat + "/" + long
+	url := baseURLForecast + darkSkyKey + "/" + lat + "," + long
+
 	req, _ := http.NewRequest("GET", url, nil)
 
 	res, err := http.DefaultClient.Do(req)
